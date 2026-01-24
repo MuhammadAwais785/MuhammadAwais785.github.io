@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Awais Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="/logo.png" alt="Logo" />
+            </div>
+
+
+            <div class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <div class="nav-links" id="nav-links">
+                <a href="#home" class="active">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+                <button class="theme-btn" id="theme-toggle">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!-- Home Section -->
+    <section class="home" id="home">
+        <div class="home-content">
+            <div class="home-text">
+                <h1>Hi, I'm <span class="highlight">Muhammad Awais</span></h1>
+                <h3 class="role">Aspiring Web & App Developer</h3>
+                <p>
+                    I craft modern, responsive, and user-focused websites & apps —
+                    blending creativity with clean, efficient code.
+                </p>
+
+                <div class="home-buttons">
+                    <a href="#contact" class="btn primary">Let's Connect</a>
+                    <a href="#projects" class="btn secondary">View Work</a>
+                </div>
+
+                <!-- ===== Social Icons ===== -->
+                <div class="social-icons">
+                    <a href="https://github.com/MuhammadAwais785" title="GitHub" target="_blank"><i
+                            class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/muhammad-awais-53a804292" target="_blank" title="LinkedIn"><i
+                            class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="home-image">
+                <div class="image-frame">
+                    <img src="/HomeImage.png" alt="Muhammad Awais" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== ABOUT SECTION ===== -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="/about-image.png" alt="Muhammad Awais" />
+            </div>
+
+            <div class="about-content">
+                <h2>About <span class="highlight">Me</span></h2>
+                <p>
+                    Hi, I'm <strong>Muhammad Awais</strong> — a passionate
+                    <span class="highlight">Front-End Web Developer</span> who transforms ideas
+                    into visually appealing, responsive, and interactive websites.
+                </p>
+
+                <p>
+                    I specialize in creating seamless user experiences with
+                    <strong>HTML, CSS, JavaScript</strong>, and modern frameworks.
+                    My approach combines creativity, functionality, and attention to detail to
+                    bring projects to life that not only look great but perform efficiently.
+                </p>
+
+
+                <div class="about-buttons">
+                    <a href="#projects" class="btn primary">View My Work</a>
+                    <a href="#contact" class="btn secondary">Hire Me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== PROJECTS SECTION ===== -->
+    <section class="projects" id="projects" data-aos="fade-up">
+        <h2>My <span class="highlight">Projects & Services</span></h2>
+        <p class="section-intro">
+            Blending creativity and code — here’s a glimpse of what I build.
+        </p>
+
+        <!-- === SERVICES SECTION === -->
+        <div class="service-grid">
+            <div class="service-card glass">
+                <div class="icon"><i class="fa-solid fa-code"></i></div>
+                <h3>Web Development</h3>
+                <p>
+                    Responsive, fast, and modern websites using HTML, CSS, and JavaScript with clean code and smooth UI.
+                </p>
+            </div>
+
+            <div class="service-card glass">
+                <div class="icon"><i class="fa-solid fa-mobile-screen"></i></div>
+                <h3>App Development</h3>
+                <p>
+                    Creating hybrid mobile apps that blend design and performance using Flutter and modern JS
+                    frameworks.
+                </p>
+            </div>
+
+            <div class="service-card glass">
+                <div class="icon"><i class="fa-solid fa-pen-ruler"></i></div>
+                <h3>UI/UX Design</h3>
+                <p>
+                    Designing intuitive and minimal interfaces in Figma — where user experience meets modern aesthetics.
+                </p>
+            </div>
+        </div>
+
+        <!-- === PORTFOLIO PROJECTS === -->
+        <div class="portfolio-showcase">
+            <div class="project-card glass">
+                <img src="/project1.png" alt="Smart Home Automation" />
+                <div class="project-info">
+                    <h3>Smart Home Automation</h3>
+                    <p>IoT-based system to control home appliances remotely.</p>
+                </div>
+            </div>
+
+            <div class="project-card glass">
+                <img src="/project2.png" alt="ATM System" />
+                <div class="project-info">
+                    <h3>ATM System</h3>
+                    <p>Console-based banking system in C++ with secure login.</p>
+                </div>
+            </div>
+
+            <div class="project-card glass">
+                <img src="/project3.png" alt="Chat Application" />
+                <div class="project-info">
+                    <h3>Chat Application</h3>
+                    <p>Real-time multi-user chat app using sockets and Node.js.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- ==================== CONTACT SECTION ==================== -->
+    <section id="contact" data-aos="fade-up">
+        <div class="contact-container">
+            <h2>Get in Touch</h2>
+            <p>
+                I’d love to connect with you! Fill out the form below or reach out via social media.
+            </p>
+
+            <form>
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" required />
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Your Email" required />
+                </div>
+                <div class="form-group">
+                    <textarea rows="5" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/muhammad-awais-53a804292" aria-label="LinkedIn" target="_blank"><i
+                        class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/MuhammadAwais785" aria-label="GitHub" target="_blank"><i
+                        class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Copy right | All Rights Reserved</p>
+    </footer>
+    <!-- FontAwesome (for icons) -->
+    <script src="https://kit.fontawesome.com/a2d9a34e84.js" crossorigin="anonymous"></script>
+
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
