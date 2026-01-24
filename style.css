@@ -40,7 +40,9 @@ body {
   backdrop-filter: blur(10px);
   background: rgba(88, 93, 104, 0.75);
   border-bottom: 1px solid rgba(124, 58, 237, 0.2);
-  transition: background 0.4s ease, box-shadow 0.4s ease,
+  transition:
+    background 0.4s ease,
+    box-shadow 0.4s ease,
     backdrop-filter 0.4s ease;
 }
 
@@ -58,7 +60,9 @@ body {
   object-fit: contain;
   filter: brightness(1.4) contrast(1.3)
     drop-shadow(0 0 6px rgba(223, 216, 216, 0.6));
-  transition: filter 0.3s ease, transform 0.3s ease;
+  transition:
+    filter 0.3s ease,
+    transform 0.3s ease;
   filter: brightness(6) contrast(3);
 }
 
@@ -122,7 +126,9 @@ body {
   color: var(--text-color);
   font-size: 1.2rem;
   cursor: pointer;
-  transition: transform 0.3s ease, color 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
 }
 
 .theme-btn:hover {
@@ -138,6 +144,7 @@ body {
   cursor: pointer;
 }
 
+/* ====== Corrected Mobile Menu ====== */
 @media (max-width: 900px) {
   .nav-links {
     position: absolute;
@@ -146,17 +153,27 @@ body {
     background: rgba(15, 23, 42, 0.95);
     flex-direction: column;
     align-items: flex-start;
-    padding: 20px;
     width: 250px;
-    height: 0;
-    overflow: hidden;
     border-radius: 0 0 0 20px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-    transition: height 0.4s ease;
+
+    /* FIX: Set height, padding, and opacity to 0 when closed */
+    height: 0;
+    padding: 0 20px; /* Horizontal padding is fine, vertical must be 0 */
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden; /* Completely removes it from view and interaction */
+    pointer-events: none;
+
+    transition: all 0.4s ease;
   }
 
   .nav-links.open {
     height: 320px;
+    padding: 20px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
   }
 
   .nav-links a {
@@ -300,7 +317,10 @@ body {
 .social-icons a {
   color: var(--text-muted);
   font-size: 1.6rem;
-  transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease,
+    text-shadow 0.3s ease;
 }
 
 .social-icons a:hover {
@@ -519,7 +539,9 @@ body {
 .about-content {
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
 }
 
 .about-image.visible,
@@ -527,14 +549,6 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
-
-/* =========================================================
-   2. PROJECTS SECTION (FIXED & IMPROVED) 🛠️
-   ========================================================= */
-
-/* =========================================================
-   PROJECTS SECTION: FULLY WORKING FIX
-   ========================================================= */
 
 .projects {
   background: linear-gradient(180deg, #1e293b 0%, #273349 100%);
@@ -577,7 +591,9 @@ body {
   padding: 30px;
   border-radius: 15px;
   text-align: left;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
   background: var(--glass-light);
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -589,7 +605,9 @@ body {
 
 .service-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 0 20px var(--primary-color);
+  box-shadow:
+    0 15px 30px rgba(0, 0, 0, 0.4),
+    0 0 20px var(--primary-color);
 }
 
 .service-card .icon {
@@ -731,7 +749,9 @@ body {
   box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
   position: relative;
   z-index: 1;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
 }
 
 .contact-container:hover {
@@ -794,7 +814,10 @@ button {
   border-radius: 12px;
   cursor: pointer;
   font-weight: 600;
-  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  transition:
+    background 0.3s ease,
+    transform 0.2s ease,
+    box-shadow 0.3s ease;
 }
 
 button:hover {
@@ -816,7 +839,9 @@ button:hover {
   color: var(--primary-color);
   margin: 0 14px;
   font-size: 1.6rem;
-  transition: color 0.3s, transform 0.3s;
+  transition:
+    color 0.3s,
+    transform 0.3s;
 }
 
 .social-links a:hover {
