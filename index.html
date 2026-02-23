@@ -1,1 +1,61 @@
-<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="UTF-8">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <title>Pong Game</title>\n    <style>\n        canvas {\n            border: 1px solid black;\n            display: block;\n            margin: 0 auto;\n        }\n    </style>\n</head>\n<body>\n    <canvas id="pongCanvas" width="800" height="400"></canvas>\n    <script>\n        const canvas = document.getElementById('pongCanvas');\n        const ctx = canvas.getContext('2d');\n        let paddleWidth = 10, paddleHeight = 100;\n        let paddle1Y = (canvas.height - paddleHeight) / 2;\n        let paddle2Y = (canvas.height - paddleHeight) / 2;\n        const ballRadius = 10;\n        let ballX = canvas.width / 2;\n        let ballY = canvas.height / 2;\n        let ballSpeedX = 5;\n        let ballSpeedY = 3;\n        let player1Score = 0;\n        let player2Score = 0;\n\n        function drawPaddle(x, y) {\n            ctx.fillStyle = 'black';\n            ctx.fillRect(x, y, paddleWidth, paddleHeight);\n        }\n\n        function drawBall() {\n            ctx.beginPath();\n            ctx.arc(ballX, ballY, ballRadius, 0, Math.PI * 2);\n            ctx.fillStyle = 'black';\n            ctx.fill();\n            ctx.closePath();\n        }\n\n        function drawScore() {\n            ctx.font = '20px Arial';\n            ctx.fillText(player1Score, canvas.width / 4, 30);\n            ctx.fillText(player2Score, (canvas.width * 3) / 4, 30);\n        }\n\n        function update() {\n            ballX += ballSpeedX;\n            ballY += ballSpeedY;\n\n            if (ballY + ballRadius > canvas.height || ballY - ballRadius < 0) {\n                ballSpeedY = -ballSpeedY;\n            }\n\n            if (ballX - ballRadius < paddleWidth && ballY > paddle1Y && ballY < paddle1Y + paddleHeight) {\n                ballSpeedX = -ballSpeedX;\n            } else if (ballX + ballRadius > canvas.width - paddleWidth && ballY > paddle2Y && ballY < paddle2Y + paddleHeight) {\n                ballSpeedX = -ballSpeedX;\n            }\n\n            if (ballX + ballRadius > canvas.width) {\n                player1Score++;\n                resetBall();\n            } else if (ballX - ballRadius < 0) {\n                player2Score++;\n                resetBall();\n            }\n        }\n\n        function resetBall() {\n            ballX = canvas.width / 2;\n            ballY = canvas.height / 2;\n            ballSpeedX = -ballSpeedX;\n        }\n\n        function gameLoop() {\n            ctx.clearRect(0, 0, canvas.width, canvas.height);\n            drawPaddle(0, paddle1Y);\n            drawPaddle(canvas.width - paddleWidth, paddle2Y);\n            drawBall();\n            drawScore();\n            update();\n            requestAnimationFrame(gameLoop);\n        }\n\n        document.addEventListener('mousemove', (event) => {\n            const mouseY = event.clientY - canvas.getBoundingClientRect().top;\n            paddle1Y = mouseY - paddleHeight / 2;\n            paddle2Y = paddle1Y;\n        });\n\n        gameLoop();\n    </script>\n</body>\n</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <h1>Welcome to My Portfolio</h1>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <img src="about.jpg" alt="About image">
+        <p>Description about me.</p>
+    </section>
+
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="portfolio">
+            <div class="card">
+                <h3>Project Title 1</h3>
+                <p>Project description 1.</p>
+            </div>
+            <div class="card">
+                <h3>Project Title 2</h3>
+                <p>Project description 2.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Muhammad Awais</p>
+    </footer>
+</body>
+</html>
