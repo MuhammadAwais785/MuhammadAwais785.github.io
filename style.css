@@ -223,7 +223,7 @@ body {
   min-width: 300px;
   max-width: 600px;
   padding: 20px;
-  animation: fadeInUp 1s ease forwards;
+  animation: fadeInUp 0.5s ease forwards;
 }
 
 .home-text h1 {
@@ -328,7 +328,7 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
-  animation: fadeIn 1.3s ease forwards;
+  animation: fadeIn 0.5s ease forwards;
 }
 
 .image-frame {
@@ -355,6 +355,10 @@ body {
 }
 
 @media (max-width: 900px) {
+  .home {
+    padding-top: 110px;
+  }
+
   .home-content {
     flex-direction: column-reverse;
     text-align: center;
@@ -379,7 +383,7 @@ body {
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(25px);
+    transform: translateY(15px);
   }
   to {
     opacity: 1;
@@ -390,7 +394,7 @@ body {
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: scale(0.9);
+    transform: scale(0.95);
   }
   to {
     opacity: 1;
