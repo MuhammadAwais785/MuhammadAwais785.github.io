@@ -71,9 +71,9 @@ function highlightNavLink(scrollPos) {
 
 // --- 5. DARK / LIGHT MODE ---
 themeToggle.addEventListener("click", () => {
-  body.classList.toggle("dark-mode");
+  body.classList.toggle("light-mode");
   // Update emoji based on mode
-  themeToggle.textContent = body.classList.contains("dark-mode") ? "☀️" : "🌙";
+  themeToggle.textContent = body.classList.contains("light-mode") ? "🌙" : "☀️";
 });
 
 // --- 6. SMOOTH SCROLLING ---
@@ -94,7 +94,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 function revealOnScroll() {
   // Target all elements that need to fade in
   const elements = document.querySelectorAll(
-    ".home-text, .home-image, .about-image, .about-content, .service-card, .project-card",
+    ".home-text, .home-image, .about-image, .about-content, .service-card, .project-card, .skill-card, .cert-card",
   );
 
   elements.forEach((el) => {
@@ -110,3 +110,9 @@ function revealOnScroll() {
 
 // Initial calls on page load
 revealOnScroll();
+
+// --- 8. INITIALIZE AOS (Animate On Scroll) ---
+AOS.init({
+  duration: 800,
+  once: true,
+});
