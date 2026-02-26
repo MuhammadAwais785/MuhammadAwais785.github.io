@@ -177,6 +177,19 @@ body {
   .menu-toggle {
     display: block;
   }
+
+  .nav-container {
+    padding: 8px 5%;
+  }
+
+  .logo img {
+    height: 45px;
+    width: 45px;
+  }
+
+  .nav-links {
+    top: 65px;
+  }
 }
 
 /* ==================== HOME SECTION ==================== */
@@ -356,7 +369,7 @@ body {
 
 @media (max-width: 900px) {
   .home {
-    padding-top: 110px;
+    padding-top: 90px;
   }
 
   .home-content {
