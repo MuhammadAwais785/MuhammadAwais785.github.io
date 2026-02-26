@@ -160,11 +160,13 @@ body {
   }
 
   .nav-links.open {
-    height: 320px;
+    height: auto;
+    max-height: 80vh;
     padding: 20px;
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
+    overflow-y: auto;
   }
 
   .nav-links a {
